@@ -3,17 +3,22 @@
 
 set -xe
 
-docker rm -f ollama
+cat run.sh
+
+docker network create agents >/dev/null 2>&1 || :
+docker rm -f ollama >/dev/null || :
 
 docker run -d \
   --restart always \
   --name ollama \
   --gpus=all \
+  --network agents \
   -v ollama:/root/.ollama \
   -p 11434:11434 \
-  ollama/ollama
+  -e OLLAMA_HOST=0.0.0.0 \
+  ollama/ollama >/dev/null
 
 docker logs ollama
-
+echo
 docker ps | grep ollama
 
