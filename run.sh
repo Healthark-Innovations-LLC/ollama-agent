@@ -13,4 +13,6 @@ docker run -d \
   -p 11434:11434 \
   ollama/ollama
 
+docker logs ollama
+
 docker ps | grep ollama
