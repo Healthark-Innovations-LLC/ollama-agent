@@ -17,5 +17,3 @@ docker logs ollama
 
 docker ps | grep ollama
 
-docker exec -it ollama bash
-
