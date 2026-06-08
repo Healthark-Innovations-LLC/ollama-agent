@@ -9,10 +9,10 @@ docker network create agents >/dev/null 2>&1 || :
 docker rm -f ollama >/dev/null || :
 
 docker run -d \
-  --restart always \
   --name ollama \
-  --gpus=all \
   --network agents \
+  --restart always \
+  --gpus=all \
   -v ollama:/root/.ollama \
   -p 11434:11434 \
   -e OLLAMA_HOST=0.0.0.0 \
