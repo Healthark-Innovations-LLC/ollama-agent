@@ -4,7 +4,7 @@
 set -xe
 
 docker logs ollama
-
+echo
 docker ps | grep ollama
 echo
 docker exec -it ollama ollama list
