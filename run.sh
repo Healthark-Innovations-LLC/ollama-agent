@@ -18,7 +18,7 @@ docker run -d \
   -e OLLAMA_HOST=0.0.0.0 \
   ollama/ollama >/dev/null
 
-docker logs ollama
-echo
 docker ps | grep ollama
+echo
+docker logs -f ollama
 
