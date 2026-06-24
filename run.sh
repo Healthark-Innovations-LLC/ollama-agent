@@ -16,6 +16,7 @@ docker run -d \
   -v ollama:/root/.ollama \
   -p 11434:11434 \
   -e OLLAMA_HOST=0.0.0.0 \
+  -e OLLAMA_CONTEXT_LENGTH=256000 \
   ollama/ollama >/dev/null
 
 docker ps | grep ollama
