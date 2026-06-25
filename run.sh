@@ -2,6 +2,7 @@
 # run ollama in docker
 
 image="ollama/ollama"
+OLLAMA_CONTEXT_LENGTH=256000
 
 set -xe
 
@@ -18,7 +19,7 @@ docker run -d \
   -v ollama:/root/.ollama \
   -p 11434:11434 \
   -e OLLAMA_HOST=0.0.0.0 \
-  -e OLLAMA_CONTEXT_LENGTH=256000 \
+  -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
   $image >/dev/null
 
 docker exec ollama ollama pull gemma4:12b 
