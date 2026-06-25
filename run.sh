@@ -1,6 +1,8 @@
 #!/bin/bash 
 # run ollama in docker
 
+image="ollama-agent"
+
 set -xe
 
 cat run.sh
@@ -17,7 +19,7 @@ docker run -d \
   -p 11434:11434 \
   -e OLLAMA_HOST=0.0.0.0 \
   -e OLLAMA_CONTEXT_LENGTH=256000 \
-  ollama/ollama >/dev/null
+  $image >/dev/null
 
 docker exec ollama ollama pull gemma4:12b 
 
