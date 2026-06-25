@@ -21,5 +21,4 @@ docker run -d \
 
 docker ps | grep ollama
 echo
-docker logs -f ollama
-
+docker logs ollama
