@@ -10,7 +10,7 @@ RUN curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | gpg --dearm
     tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 RUN sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
 RUN apt update 
-RUN export NVIDIA_CONTAINER_TOOLKIT_VERSION=1.19.1-1
+RUN export NVIDIA_CONTAINER_TOOLKIT_VERSION=1.19.1-1 \
   apt install -y \
       nvidia-container-toolkit=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
       nvidia-container-toolkit-base=${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
