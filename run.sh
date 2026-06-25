@@ -19,6 +19,8 @@ docker run -d \
   -e OLLAMA_CONTEXT_LENGTH=256000 \
   ollama/ollama >/dev/null
 
+docker exec ollama ollama pull gemma4:12b 
+
 docker ps | grep ollama
 echo
 docker logs ollama
