@@ -5,7 +5,7 @@ while true; do
   clear
   sensors
   echo ---
-  nvidia-smi --query-gpu=temperature.gpu,utilization.gpu,memory.used,memory.total --format=csv
+  nvidia-smi
   echo ---
   sleep 5
 done
