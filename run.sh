@@ -1,7 +1,7 @@
 #!/bin/bash 
 # run ollama in docker
 
-image="ollama-agent"
+image="ollama/ollama"
 
 set -xe
 
