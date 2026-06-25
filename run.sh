@@ -3,6 +3,7 @@
 
 image="ollama/ollama"
 OLLAMA_CONTEXT_LENGTH=256000
+OLLAMA_HOST="0.0.0.0"
 
 set -xe
 
@@ -18,7 +19,7 @@ docker run -d \
   --gpus=all \
   -v ollama:/root/.ollama \
   -p 11434:11434 \
-  -e OLLAMA_HOST=0.0.0.0 \
+  -e OLLAMA_HOST=$OLLAMA_HOST \
   -e OLLAMA_CONTEXT_LENGTH=$OLLAMA_CONTEXT_LENGTH \
   $image >/dev/null
 
