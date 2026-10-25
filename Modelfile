@@ -6,10 +6,20 @@ PARAMETER top_p 0.85
 PARAMETER repeat_penalty 1.2
 PARAMETER repeat_last_n 128
 
+
+# Stop tokens to prevent thinking tag leaks
 PARAMETER stop "<thought>"
 PARAMETER stop "</thought>"
 PARAMETER stop "<think>"
 PARAMETER stop "</think>"
+
+# Stop tokens to prevent tool and turn boundary leaks
+PARAMETER stop "<|tool_response>"
+PARAMETER stop "<|tool_call>"
+PARAMETER stop "<|call:>"
+PARAMETER stop "<|end_of_turn|>"
+PARAMETER stop "<|im_end|>"
+
 
 SYSTEM """
 Provide direct, concise, and structured answers immediately.
